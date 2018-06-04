@@ -305,7 +305,8 @@ function get_data($site, &$single_item_title = '') {
 					data_output_filter($res[$table][DATA_ITEMS_TAG_NAME], $data->field_types, $site->locale);
 
 					if ($g_id) {
-						$record_item_title = $res[$table][DATA_ITEMS_TAG_NAME][0][$data->title_field_name];
+						$item = current($res[$table][DATA_ITEMS_TAG_NAME]);
+						$record_item_title = $item[$data->title_field_name];
 						$res[$table][DATA_IS_SINGLE_TAG_NAME] = true;
 					} else {
 						$res[$table][DATA_IS_SINGLE_TAG_NAME] = false;
